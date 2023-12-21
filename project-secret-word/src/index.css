@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html,
 body{
     height: 100%;
@@ -5,7 +11,23 @@ body{
 
 body {
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f1f1f1;
+    font-size: 16px;
+    background-color: #1f1f1f;
+}
+
+button{
+    background-color: #198754;
+    color: #fff;
+    padding: 0 44px;
+    border-radius: 1rem;
+    height: 48px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: 0.4s;
+    border: none;
+}
+button:hover{
+    background-color: #13663f;
 }
