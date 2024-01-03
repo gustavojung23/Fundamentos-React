@@ -2,3 +2,9 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+.game_over h3{
+    margin-bottom: 1rem;
+    font-weight: 400;
+    color: #ecfa00;
+}
