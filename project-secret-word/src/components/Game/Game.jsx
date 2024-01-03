@@ -1,19 +1,19 @@
 import { useState, useRef } from "react";
 import "./Game.css";
 
-const Game = ({ verifyLetter, pickedWords, pickedCategory, letter, guessedLetters, wrongLetters, guesses, score }) => {
+const Game = ({ verifyLetter, pickedWords, pickedCategory, letters, guessedLetters, wrongLetters, guesses, score }) => {
   
-  const [word, setWord] = useState("");
-  const wordInputref = useRef(null);
+  const [letter, setLetter] = useState("");
+  const letterInputref = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    verifyLetter(word);
+    verifyLetter(letter);
 
-    setWord("");
+    setLetter("");
     
-    wordInputref.current.focus();
+    letterInputref.current.focus();
   }
 
   return (
@@ -30,9 +30,9 @@ const Game = ({ verifyLetter, pickedWords, pickedCategory, letter, guessedLetter
       <p className="tip">Você ainda tem {guesses} tentativas</p>
 
       <div className="wordContainer">
-        {letter.map((letter, i) => (
-          guessedLetters.includes(letter) ? (
-            <span key={i} className="letter">{letter}</span>
+        {letters.map((letters, i) => (
+          guessedLetters.includes(letters) ? (
+            <span key={i} className="letter">{letters}</span>
           ) : (
             <span key={i} className="blankSquare"></span>
             )
@@ -42,7 +42,7 @@ const Game = ({ verifyLetter, pickedWords, pickedCategory, letter, guessedLetter
       <div className="letterContainer">
         <p>Tente adivinhar uma letra da palavra:</p>
         <form onSubmit={handleSubmit}>
-          <input type="text" name="letter" maxLength="1" required onChange={(e) => setWord(e.target.value)} value={word} ref={wordInputref} />
+          <input type="text" name="letter" maxLength="1" required onChange={(e) => setLetter(e.target.value)} value={letter} ref={letterInputref} />
           <button>Jogar!</button>
         </form>
       </div>
